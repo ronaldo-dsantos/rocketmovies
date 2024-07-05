@@ -1,9 +1,10 @@
 import { FiArrowLeft, FiStar } from "react-icons/fi"
 import { LuClock3 } from "react-icons/lu";
 
-import { Container, Content, Title, Author } from "./styles"
+import { Container, Content, Title, Author, Tags } from "./styles"
 import { Header } from "../../components/Header"
 import { ButtonText } from "../../components/ButtonText"
+import { Tag } from "../../components/Tag"
 
 export function Details(){
   return(
@@ -25,6 +26,12 @@ export function Details(){
           <p>23/05/22 às 08:00</p>
         </Author>
 
+        <Tags>
+          <Tag title="Ficção Científica"/>
+          <Tag title="Drama"/>
+          <Tag title="Família"/>
+        </Tags>
+
         <p>
           Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data
           desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper,
@@ -39,6 +46,7 @@ export function Details(){
           a humanidade irá seguir para ele na instalação da NASA, que é na realidade uma enorme estação espacial. 
           A partida de Cooper devasta Murphy.
         </p>
+        <br />  
         <p>
           Além de Cooper, a tripulação da Endurance é formada pela bióloga Amelia, filha de Brand; o cientista Romilly, 
           o físico planetário Doyle, além dos robôs TARS e CASE. Eles entram no buraco de minhoca e se dirigem a Miller, 

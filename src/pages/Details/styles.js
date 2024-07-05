@@ -16,6 +16,10 @@ export const Content = styled.div`
   overflow-y: auto;
 
   padding: 40px 123px;
+
+  > p {
+    text-align: justify;
+  }
 `
 
 export const Title = styled.div`
@@ -62,4 +66,12 @@ export const Author = styled.div`
 
     color: ${({ theme }) => theme.COLORS.PINK};
   }
+`
+
+export const Tags = styled.div`
+  padding: 40px 0;
+  
+  display: flex;
+  align-items: center;
+  gap: 8px;
 `
