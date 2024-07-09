@@ -1,4 +1,4 @@
-import { Container, Content, Title } from "./styles";
+import { Container, Content } from "./styles";
 import { RiAddLargeFill } from "react-icons/ri";
 import { FiStar } from "react-icons/fi"
 
@@ -12,10 +12,10 @@ export function Home(){
       <Header />
 
       <Content>
-        <Title>
+        <header>
           <h1>Meus filmes</h1>
           <Button title="Adicionar filme" icon={RiAddLargeFill}/>
-        </Title>
+        </header>
 
         <Movie data={{ 
           title: "Interestellar",
