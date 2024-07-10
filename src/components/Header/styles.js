@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom";
 
 export const Container = styled.header`
   grid-area: header;
@@ -25,7 +26,7 @@ export const Search = styled.div`
 width: 100%;
 `
 
-export const Profile = styled.div`
+export const Profile = styled(Link)`
   display: flex;
   align-items: center;
 
@@ -44,7 +45,8 @@ export const Profile = styled.div`
 
     strong {
       white-space: nowrap;  
-      font-size: 14px;   
+      font-size: 14px; 
+      color: ${({ theme }) => theme.COLORS.WHITE };  
     }
 
     span {

@@ -17,6 +17,19 @@ export const Content = styled.div`
 
   padding: 40px 123px;
 
+  &::-webkit-scrollbar {
+      width: 8px;      
+    }
+
+  &::-webkit-scrollbar-track {
+    background: none;      
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.COLORS.PINK}; 
+    border-radius: 8px;      
+  }
+
   > p {
     text-align: justify;
   }

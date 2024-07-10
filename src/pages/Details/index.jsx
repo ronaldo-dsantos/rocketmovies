@@ -1,5 +1,6 @@
 import { FiArrowLeft, FiStar } from "react-icons/fi"
 import { LuClock3 } from "react-icons/lu";
+import { Link } from "react-router-dom";
 
 import { Container, Content, Title, Author, Tags } from "./styles"
 import { Header } from "../../components/Header"
@@ -12,7 +13,9 @@ export function Details(){
       <Header />
       
       <Content>
-        <ButtonText icon={FiArrowLeft} title="Voltar"/>
+        <Link to="/">
+          <ButtonText icon={FiArrowLeft} title="Voltar"/>        
+        </Link>
 
         <Title>
           <h1>Interestellar </h1>
@@ -55,7 +58,7 @@ export function Details(){
           é coberto por um oceano raso e agitado por ondas enormes. Uma onda atinge a tripulação enquanto Amelia tenta 
           recuperar os dados de Miller, matando Doyle e atrasando a partida. Ao voltarem para a Endurance, Cooper e Amelia 
           descobrem que 23 anos se passaram.
-        </p>                   
+        </p>                           
       </Content>
             
     </Container>

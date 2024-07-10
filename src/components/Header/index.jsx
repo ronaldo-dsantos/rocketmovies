@@ -11,10 +11,10 @@ export function Header(){
         <Input placeholder="Pesquisar pelo título"/>
       </Search>
 
-      <Profile>
+      <Profile to="/profile">
         <div>
           <strong>Ronaldo Domingues</strong>
-          <span>sair</span>
+          <span>sair</span>                    
         </div>
 
         <img src="https://github.com/ronaldo-dsantos.png" alt="Imagem do usuário" />

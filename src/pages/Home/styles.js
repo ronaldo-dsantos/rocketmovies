@@ -16,6 +16,19 @@ export const Content = styled.div`
   overflow-y: auto;
 
   padding: 0 123px;
+
+  &::-webkit-scrollbar {
+      width: 8px;      
+    }
+
+  &::-webkit-scrollbar-track {
+    background: none;      
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.COLORS.PINK}; 
+    border-radius: 8px;      
+  }
   
   > header {
     display: flex;
