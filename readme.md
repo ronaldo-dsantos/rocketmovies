@@ -39,7 +39,7 @@ cd C:\exemplo
 ```
 2. Baixe o clone do projeto com o comando abaixo:
 ```bash
-git clone https://github.com/ronaldo-dsantos/rocketmovies.git
+git clone https://github.com/ronaldo-dsantos/api-rocketmovies.git
 ```
 3. Entre no diretório do projeto:
 ```bash
