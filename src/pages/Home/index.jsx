@@ -92,10 +92,8 @@ export function Home(){
             irá seguir para ele na instalação da NASA, que é na realidade uma enorme estação espacial. A partida de Cooper 
             devasta Murphy.
           </p>
-        </Movie>          
-
+        </Movie>    
       </Content>
-
     </Container>
   )
 }
