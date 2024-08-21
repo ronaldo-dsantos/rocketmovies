@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { Link } from "react-router-dom";
 
 export const Container = styled.header`
   grid-area: header;
@@ -7,7 +6,7 @@ export const Container = styled.header`
   height: 116px;
   width: 100%;
 
-  border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_700 };
+  border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_700};
     
   display: flex;
   align-items: center;
@@ -17,7 +16,7 @@ export const Container = styled.header`
   padding: 24px 123px;
 
   > h1 {
-    color: ${({ theme }) => theme.COLORS.PINK };
+    color: ${({ theme }) => theme.COLORS.PINK};
     font-size: 24px;
   }
 `
@@ -26,7 +25,7 @@ export const Search = styled.div`
 width: 100%;
 `
 
-export const Profile = styled(Link)`
+export const Profile = styled.div`
   display: flex;
   align-items: center;
 
@@ -46,14 +45,14 @@ export const Profile = styled(Link)`
     strong {
       white-space: nowrap;  
       font-size: 14px; 
-      color: ${({ theme }) => theme.COLORS.WHITE };  
+      color: ${({ theme }) => theme.COLORS.WHITE};  
     }
 
-    span {
+    button {
       font-size: 14px;
-      color: ${({ theme }) => theme.COLORS.GRAY_300 };
-    }
-    
+      color: ${({ theme }) => theme.COLORS.GRAY_300};
+      background: none;
+      border: none;
+    }    
   }
-
 `

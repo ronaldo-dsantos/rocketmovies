@@ -1,20 +1,25 @@
 import { Container, Search, Profile } from "./styles"
 
+import { useAuth } from "../../hooks/auth"
+
 import { Input } from "../Input"
 
-export function Header(){
-  return(
+export function Header() {
+  const { SignOut } = useAuth()
+
+
+  return (
     <Container>
       <h1>RocketMovies</h1>
 
       <Search>
-        <Input placeholder="Pesquisar pelo título"/>
+        <Input placeholder="Pesquisar pelo título" />
       </Search>
 
-      <Profile to="/profile">
+      <Profile>
         <div>
           <strong>Ronaldo Domingues</strong>
-          <span>sair</span>                    
+          <button type="button" onClick={SignOut}>sair</button>          
         </div>
 
         <img src="https://github.com/ronaldo-dsantos.png" alt="Imagem do usuário" />
