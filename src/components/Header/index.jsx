@@ -1,11 +1,25 @@
+import { useNavigate, Link } from 'react-router-dom';
+
+
 import { Container, Search, Profile } from "./styles"
 
 import { useAuth } from "../../hooks/auth"
+import { api } from "../../services/api";
+
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
 
 import { Input } from "../Input"
 
 export function Header() {
-  const { SignOut } = useAuth()
+  const { SignOut, user } = useAuth()
+  const navigation = useNavigate()
+
+  function handleSignOut() {
+    navigation("/")
+    SignOut()
+  }
+
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
 
   return (
     <Container>
@@ -15,13 +29,21 @@ export function Header() {
         <Input placeholder="Pesquisar pelo título" />
       </Search>
 
-      <Profile to="/profile">
+      <Profile>
         <div>
-          <strong>Ronaldo Domingues</strong>
-          <button type="button" onClick={SignOut}>sair</button>          
+          <Link to="/profile">
+            <strong>{user.name}</strong>
+          </Link>          
+          <button type="button" onClick={handleSignOut}>sair</button>
         </div>
 
-        <img src="https://github.com/ronaldo-dsantos.png" alt="Imagem do usuário" />
+        <Link to="/profile">
+          <img
+            src={avatarUrl}
+            alt={user.name}
+          />
+        </Link>
+    
       </Profile>
 
     </Container>
