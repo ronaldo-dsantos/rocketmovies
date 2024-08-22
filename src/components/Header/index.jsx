@@ -7,7 +7,6 @@ import { Input } from "../Input"
 export function Header() {
   const { SignOut } = useAuth()
 
-
   return (
     <Container>
       <h1>RocketMovies</h1>
@@ -16,7 +15,7 @@ export function Header() {
         <Input placeholder="Pesquisar pelo título" />
       </Search>
 
-      <Profile>
+      <Profile to="/profile">
         <div>
           <strong>Ronaldo Domingues</strong>
           <button type="button" onClick={SignOut}>sair</button>          
