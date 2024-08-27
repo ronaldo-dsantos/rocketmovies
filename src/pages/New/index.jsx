@@ -33,7 +33,7 @@ export function New() {
   }
 
   async function handleNewMovie() {
-    if (!title || !rating || description) {
+    if (!title || !rating || !description) {
       return alert("Para cadastrar um novo filme, preencha todos os campos.")
     }
 

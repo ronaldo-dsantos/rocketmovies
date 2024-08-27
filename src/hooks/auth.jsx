@@ -1,7 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
 import { api } from "../services/api"
-import { json } from "react-router-dom";
 
 export const AuthContext = createContext({})
 
