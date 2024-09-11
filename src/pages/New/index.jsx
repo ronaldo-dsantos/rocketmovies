@@ -1,10 +1,10 @@
 import { FiArrowLeft } from "react-icons/fi"
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom"
+import { useState } from "react"
 
 import { Container, Form } from "./styles"
 
-import { api } from "../../services/api";
+import { api } from "../../services/api"
 
 import { Header } from "../../components/Header"
 import { ButtonText } from "../../components/ButtonText"
@@ -44,7 +44,7 @@ export function New() {
     await api.post("/notes", {
       title,
       description,
-      rating, 
+      rating,
       tags
     })
 
@@ -54,7 +54,11 @@ export function New() {
 
   return (
     <Container>
-      <Header />
+      <Header>
+        <Input
+          placeholder="Pesquisar pelo título"
+        />
+      </Header>
 
       <main>
         <Form>
@@ -105,10 +109,10 @@ export function New() {
 
           <div className="buttons">
             <Button title="Excluir filme" />
-            <Button 
-              title="Salvar alterações" 
+            <Button
+              title="Salvar alterações"
               onClick={handleNewMovie}
-              />
+            />
           </div>
         </Form>
       </main>

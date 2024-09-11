@@ -1,42 +1,30 @@
-import { useNavigate, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom'
 
 import { Container, Search, Profile } from "./styles"
 
 import { useAuth } from "../../hooks/auth"
-import { api } from "../../services/api";
+import { api } from "../../services/api"
 
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
 
-import { Input } from "../Input"
-
-export function Header({ onSearch }) {
-  const [inputValue, setInputValue] = useState('')  
-
+export function Header({ children }) {
   const { SignOut, user } = useAuth()
 
-  const navigation = useNavigate()
+  const navigate = useNavigate()
 
   function handleSignOut() {
-    navigation("/")
+    navigate("/")
     SignOut()
   }
 
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
-
- useEffect(() => {
-   onSearch(inputValue);
-  }, [inputValue])
 
   return (
     <Container>
       <h1>RocketMovies</h1>
 
       <Search>
-        <Input
-          placeholder="Pesquisar pelo título"
-          onChange={e => setInputValue(e.target.value)}
-        />
+        {children}
       </Search>
 
       <Profile>

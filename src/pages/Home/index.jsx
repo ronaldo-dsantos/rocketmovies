@@ -1,31 +1,37 @@
-import { RiAddLargeFill } from "react-icons/ri";
+import { RiAddLargeFill } from "react-icons/ri"
 import { FiStar } from "react-icons/fi"
-import { Link } from "react-router-dom";
-import { useState } from 'react';
+import { Link } from "react-router-dom"
+import { useState, useEffect } from 'react'
 
-import { api } from "../../services/api";
+import { api } from "../../services/api"
 
-import { Container, Content } from "./styles";
+import { Container, Content } from "./styles"
 
 import { Header } from "../../components/Header"
+import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { Movie } from "../../components/Movie"
-
 
 export function Home() {
   const [search, setSearch] = useState("")
   const [movies, setMovies] = useState([])
 
-  async function fetchMovies(inputValue) {
-    setSearch(inputValue)
-
-    const response = await api.get(`/notes?title=${search}`)
-    setMovies(response.data)
-  }
+  useEffect(() => {
+    async function fetchMovies() {
+      const response = await api.get(`/notes?title=${search}`)
+      setMovies(response.data)
+    }
+    fetchMovies()
+  }, [search])
 
   return (
     <Container>
-      <Header onSearch={fetchMovies} />
+      <Header>
+        <Input
+          placeholder="Pesquisar pelo título"
+          onChange={e => setSearch(e.target.value)}
+        />
+      </Header>
 
       <Content>
         <header>
