@@ -18,12 +18,14 @@ export const Container = styled.button`
     color: ${({ theme }) => theme.COLORS.WHITE }
   }
 
-  > svg {
-    width: 12px;
-    height: 12px;
+  > div {
+    svg {
+      width: 16px;
+      height: 16px;
 
-    float: left;
-    margin-right: 6px;
+      float: left;
+      margin-right: 6px;
+    }
   }
 
   > p {

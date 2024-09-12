@@ -12,6 +12,7 @@ import { Header } from "../../components/Header"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { Movie } from "../../components/Movie"
+import { Rating } from "../../components/Rating"
 
 export function Home() {
   const [search, setSearch] = useState("")
@@ -56,8 +57,8 @@ export function Home() {
               key={String(movie.id)}
               data={movie}
               onClick={() => handleDetails(movie.id)}
-            >
-              <FiStar /> <FiStar /> <FiStar /> <FiStar /> <FiStar />
+            >              
+              <Rating rating={movie.rating}/>
               <br />
               <p>
                 {movie.description}

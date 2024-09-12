@@ -27,7 +27,7 @@ export const Content = styled.div`
 
   &::-webkit-scrollbar-thumb {
     background: ${({ theme }) => theme.COLORS.PINK}; 
-    border-radius: 8px;      
+    border-radius: 8px;
   }
   
   > header {

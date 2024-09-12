@@ -49,9 +49,11 @@ export const Title = styled.div`
     margin-right: 10px;
   }
 
-  > svg {
-    width: 20px;
-    height: 20px;  
+  > div {
+    svg {
+      width: 20px;
+      height: 20px;
+    }  
   }
 `
 
