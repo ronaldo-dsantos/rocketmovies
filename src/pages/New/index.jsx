@@ -44,7 +44,7 @@ export function New() {
     await api.post("/notes", {
       title,
       description,
-      rating,
+      rating, 
       tags
     })
 
@@ -56,7 +56,7 @@ export function New() {
     <Container>
       <Header>
         <Input
-          placeholder="Pesquisar pelo título"
+          placeholder="Pesquisar pelo título"          
         />
       </Header>
 
@@ -109,10 +109,10 @@ export function New() {
 
           <div className="buttons">
             <Button title="Excluir filme" />
-            <Button
-              title="Salvar alterações"
+            <Button 
+              title="Salvar alterações" 
               onClick={handleNewMovie}
-            />
+              />
           </div>
         </Form>
       </main>

@@ -54,11 +54,6 @@ export const Title = styled.div`
     height: 20px;
 
     color: ${({ theme }) => theme.COLORS.PINK};
-    fill: ${({ theme }) => theme.COLORS.PINK};
-
-    &:nth-child(6) {
-      fill: none;
-    }
   }
 `
 

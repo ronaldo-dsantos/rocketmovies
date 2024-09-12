@@ -1,7 +1,8 @@
 import { RiAddLargeFill } from "react-icons/ri"
 import { FiStar } from "react-icons/fi"
 import { Link } from "react-router-dom"
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
 import { api } from "../../services/api"
 
@@ -16,6 +17,12 @@ export function Home() {
   const [search, setSearch] = useState("")
   const [movies, setMovies] = useState([])
 
+  const navigate = useNavigate()
+
+  function handleDetails(id){
+    navigate(`/details/${id}`)    
+  }
+
   useEffect(() => {
     async function fetchMovies() {
       const response = await api.get(`/notes?title=${search}`)
@@ -28,6 +35,7 @@ export function Home() {
     <Container>
       <Header>
         <Input
+          autoFocus
           placeholder="Pesquisar pelo título"
           onChange={e => setSearch(e.target.value)}
         />
@@ -47,6 +55,7 @@ export function Home() {
             <Movie
               key={String(movie.id)}
               data={movie}
+              onClick={() => handleDetails(movie.id)}
             >
               <FiStar /> <FiStar /> <FiStar /> <FiStar /> <FiStar />
               <br />
