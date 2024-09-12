@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import { FiArrowLeft } from "react-icons/fi"
-import { IoMdStar, IoIosStarOutline } from "react-icons/io"
 import { LuClock3 } from "react-icons/lu"
 import { useParams, useNavigate } from "react-router-dom"
 
@@ -12,6 +11,7 @@ import { Header } from "../../components/Header"
 import { Input } from "../../components/Input"
 import { ButtonText } from "../../components/ButtonText"
 import { Tag } from "../../components/Tag"
+import { Rating } from "../../components/Rating"
 
 export function Details() {
   const [data, setData] = useState(null)
@@ -53,11 +53,7 @@ export function Details() {
             <h1>
               {data.title}
             </h1>
-            {              
-              Array.from({ length: data.rating }).map((_, index) => (                
-                <IoMdStar key={String(index)}/> //Parei aqui, agora precisa inserir as estrelas sem preenchimento para as notas menores que 5
-              ))              
-            }            
+            <Rating rating={data.rating}/>           
           </Title>
 
           <Author>

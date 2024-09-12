@@ -24,14 +24,6 @@ export const Container = styled.button`
 
     float: left;
     margin-right: 6px;
-
-  
-    color: ${({ theme }) => theme.COLORS.PINK};
-    fill: ${({ theme }) => theme.COLORS.PINK};
-
-    &:nth-child(6) {
-      fill: none;
-    }
   }
 
   > p {

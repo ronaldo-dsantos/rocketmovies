@@ -51,9 +51,7 @@ export const Title = styled.div`
 
   > svg {
     width: 20px;
-    height: 20px;
-
-    color: ${({ theme }) => theme.COLORS.PINK};
+    height: 20px;  
   }
 `
 
