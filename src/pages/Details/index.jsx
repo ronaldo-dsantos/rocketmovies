@@ -6,6 +6,9 @@ import { useParams, useNavigate } from "react-router-dom"
 import { Container, Content, Title, Author, Tags } from "./styles"
 
 import { api } from "../../services/api"
+import { formatDateTime } from "../../services/formatDateTime"
+
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
 
 import { Header } from "../../components/Header"
 import { Input } from "../../components/Input"
@@ -21,7 +24,7 @@ export function Details() {
 
   function handleBack() {
     navigate("/")
-  }
+  }  
 
   useEffect(() => {
     async function fetchMovie() {
@@ -57,10 +60,13 @@ export function Details() {
           </Title>
 
           <Author>
-            <img src="https://github.com/ronaldo-dsantos.png" alt="Imagem do usuário" />
-            <p>Por Ronaldo Domingues</p>
-            <LuClock3 />
-            <p>23/05/22 às 08:00</p>
+            <img 
+              src={data.avatar ? `${api.defaults.baseURL}/files/${data.avatar}` : avatarPlaceholder} 
+              alt={data.name} 
+            />
+            <p>{data.name}</p>
+            <LuClock3 />            
+            <p>{formatDateTime(data.created_at)}</p>
           </Author>
 
           {
