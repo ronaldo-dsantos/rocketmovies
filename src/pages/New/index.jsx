@@ -1,5 +1,5 @@
 import { FiArrowLeft } from "react-icons/fi"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 
 import { Container, Form } from "./styles"
@@ -115,9 +115,8 @@ export function New() {
           </div>
 
           <div className="buttons">
-            <Button title="Excluir filme" />
             <Button
-              title="Salvar alterações"
+              title="Adicionar filme"
               onClick={handleNewMovie}
             />
           </div>

@@ -1,5 +1,4 @@
 import { RiAddLargeFill } from "react-icons/ri"
-import { FiStar } from "react-icons/fi"
 import { Link } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
