@@ -1,9 +1,9 @@
 import { Container } from "./styles"
 
-export function TextArea({value, ...rest}){
+export function TextArea({...rest}){
   return(
     <Container {...rest}>
-      {value}
+      
     </Container>
   )
 }

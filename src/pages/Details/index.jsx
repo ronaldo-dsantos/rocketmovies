@@ -21,6 +21,10 @@ export function Details() {
   const params = useParams()
   const navigate = useNavigate()
 
+  function handleSearch() {
+    navigate("/")
+  }
+
   function handleBack() {
     navigate("/")
   }  
@@ -39,6 +43,7 @@ export function Details() {
       <Header>
         <Input
           placeholder="Pesquisar pelo título"
+          onClick={handleSearch}
         />
       </Header>
 

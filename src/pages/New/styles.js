@@ -73,11 +73,16 @@ export const Form = styled.form`
 
   .buttons {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
 
     > button {
-      margin: 40px 0 32px;
-      width: 48%;
+      margin: 40px 0 24px;      
+
+      &:nth-child(1) {
+        background-color: ${({ theme }) => theme.COLORS.BLACK};
+        color: ${({ theme }) => theme.COLORS.PINK};
+      }
     }
   }
 `

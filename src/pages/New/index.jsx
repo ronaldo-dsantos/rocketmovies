@@ -23,9 +23,13 @@ export function New() {
 
   const navigate = useNavigate()
 
+  function handleSearch() {
+    navigate("/")
+  }
+
   function handleBack() {
     navigate("/")
-  } 
+  }
 
   function handleAddTag() {
     setTags(prevState => [...prevState, newTag])
@@ -36,9 +40,23 @@ export function New() {
     setTags(prevState => prevState.filter(tag => tag !== deleted))
   }
 
+  function handleClear() {
+    setTitle("")
+    setRating("")
+    setDescription("")
+    setTags([])
+    setNewTag("")
+  }
+
   async function handleNewMovie() {
     if (!title || !rating || !description) {
       return alert("Para cadastrar um novo filme, preencha todos os campos.")
+    }
+
+    const ratingIsNumber = Math.round(rating)
+
+    if (ratingIsNumber < 1 || ratingIsNumber > 5 || isNaN(ratingIsNumber)) {
+      return alert("Informe uma nota de 1 a 5.")
     }
 
     if (newTag) {
@@ -61,16 +79,17 @@ export function New() {
       <Header>
         <Input
           placeholder="Pesquisar pelo título"
+          onClick={handleSearch}
         />
       </Header>
 
-      <main>        
-        <ButtonText 
-          icon={FiArrowLeft} 
+      <main>
+        <ButtonText
+          icon={FiArrowLeft}
           title="Voltar"
-          onClick={handleBack} 
+          onClick={handleBack}
         />
-        
+
         <Form>
           <header>
             <h1>Novo filme</h1>
@@ -80,16 +99,19 @@ export function New() {
             <Input
               placeholder="Título"
               onChange={e => setTitle(e.target.value)}
+              value={title}
             />
             <Input
               placeholder="Sua nota (de 0 a 5)"
               onChange={e => setRating(e.target.value)}
+              value={rating}
             />
           </div>
 
           <TextArea
             placeholder="Observações"
             onChange={e => setDescription(e.target.value)}
+            value={description}
           />
 
           <h2>Marcadores</h2>
@@ -116,13 +138,16 @@ export function New() {
 
           <div className="buttons">
             <Button
-              title="Adicionar filme"
+              title="Limpar"
+              onClick={handleClear}
+            />
+            <Button
+              title="Salvar"
               onClick={handleNewMovie}
             />
           </div>
         </Form>
       </main>
-
 
     </Container>
   )
