@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
+  overflow-y: hidden;
 
   display: grid;
   grid-template-rows: 116px auto;
@@ -13,25 +14,28 @@ export const Container = styled.div`
   > main {
     padding: 40px 123px;
     grid-area: content;
-    overflow-y: auto;
 
-    &::-webkit-scrollbar {
-      width: 8px;      
-    }
-
-    &::-webkit-scrollbar-track {
-      background: none;      
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: ${({ theme }) => theme.COLORS.PINK}; 
-      border-radius: 8px;      
-    }
   }
 `
 
 export const Form = styled.form`
   width: 100%;
+  height: 660px;
+  
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;      
+  }
+
+  &::-webkit-scrollbar-track {
+    background: none;      
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.COLORS.PINK}; 
+    border-radius: 8px;      
+  }
 
   > header {
     h1 {
@@ -74,7 +78,7 @@ export const Form = styled.form`
     gap: 40px;
 
     > button {
-      margin-top: 40px;
+      margin: 40px 0 24px;
       
 
       &:nth-child(1) {

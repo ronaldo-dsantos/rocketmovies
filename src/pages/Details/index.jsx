@@ -7,7 +7,6 @@ import { Container, Content, Title, Author, Tags } from "./styles"
 
 import { api } from "../../services/api"
 import { formatDateTime } from "../../services/formatDateTime"
-
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
 
 import { Header } from "../../components/Header"

@@ -20,8 +20,8 @@ export function Home() {
 
   const navigate = useNavigate()
 
-  function handleDetails(id){
-    navigate(`/details/${id}`)    
+  function handleDetails(id) {
+    navigate(`/details/${id}`)
   }
 
   useEffect(() => {
@@ -43,29 +43,33 @@ export function Home() {
       </Header>
 
       <Content>
-        <header>
+        <section>
           <h1>Meus filmes</h1>
           <Link to="/new">
             <Button title="Adicionar filme" icon={RiAddLargeFill} />
           </Link>
-        </header>
+        </section>
 
-        {
-          movies.map(movie => (
+        <div className="movie">
+          {
+            movies.map(movie => (
 
-            <Movie
-              key={String(movie.id)}
-              data={movie}
-              onClick={() => handleDetails(movie.id)}
-            >              
-              <Rating rating={movie.rating}/>
-              <br />
-              <p>
-                {movie.description}
-              </p>
-            </Movie>
-          ))
-        }
+              <Movie
+                key={String(movie.id)}
+                data={movie}
+                onClick={() => handleDetails(movie.id)}
+              >
+                <Rating rating={movie.rating} />
+                <br />
+                <p>
+                  {movie.description}
+                </p>
+              </Movie>
+            ))
+          }
+        </div>
+
+
 
       </Content>
     </Container>
