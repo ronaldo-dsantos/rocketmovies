@@ -14,13 +14,12 @@ export const Container = styled.div`
   > main {
     padding: 40px 123px;
     grid-area: content;
-
   }
 `
 
 export const Form = styled.form`
   width: 100%;
-  height: 660px;
+  height: 640px;
   
   overflow-y: auto;
 

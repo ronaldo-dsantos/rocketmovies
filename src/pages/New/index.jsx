@@ -23,6 +23,10 @@ export function New() {
 
   const navigate = useNavigate()
 
+  function handleBack() {
+    navigate("/")
+  } 
+
   function handleAddTag() {
     setTags(prevState => [...prevState, newTag])
     setNewTag("")
@@ -44,7 +48,7 @@ export function New() {
     await api.post("/notes", {
       title,
       description,
-      rating, 
+      rating,
       tags
     })
 
@@ -56,16 +60,19 @@ export function New() {
     <Container>
       <Header>
         <Input
-          placeholder="Pesquisar pelo título"          
+          placeholder="Pesquisar pelo título"
         />
       </Header>
 
-      <main>
+      <main>        
+        <ButtonText 
+          icon={FiArrowLeft} 
+          title="Voltar"
+          onClick={handleBack} 
+        />
+        
         <Form>
           <header>
-            <Link to="/">
-              <ButtonText icon={FiArrowLeft} title="Voltar" />
-            </Link>
             <h1>Novo filme</h1>
           </header>
 
@@ -109,10 +116,10 @@ export function New() {
 
           <div className="buttons">
             <Button title="Excluir filme" />
-            <Button 
-              title="Salvar alterações" 
+            <Button
+              title="Salvar alterações"
               onClick={handleNewMovie}
-              />
+            />
           </div>
         </Form>
       </main>

@@ -11,11 +11,11 @@ export const Container = styled.div`
   "content";
 `
 
-export const Content = styled.div`  
+export const Content = styled.div`
+  padding: 40px 123px;
+
   grid-area: content;
   overflow-y: auto;
-
-  padding: 40px 123px;
 
   &::-webkit-scrollbar {
       width: 8px;      
