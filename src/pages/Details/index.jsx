@@ -14,6 +14,7 @@ import { Input } from "../../components/Input"
 import { ButtonText } from "../../components/ButtonText"
 import { Tag } from "../../components/Tag"
 import { Rating } from "../../components/Rating"
+import { Button } from "../../components/Button"
 
 export function Details() {
   const [data, setData] = useState(null)
@@ -21,18 +22,23 @@ export function Details() {
   const params = useParams()
   const navigate = useNavigate()
 
-  function handleSearch() {
-    navigate("/")
+  function handleBack() {
+    navigate(-1)
   }
 
-  function handleBack() {
-    navigate("/")
-  }  
+  async function handleRemove() {
+    const confirm = window.confirm("Deseja realmente remover a nota?")
+
+    if (confirm) {
+      await api.delete(`/notes/${params.id}`)
+      handleBack()
+    }
+  }
 
   useEffect(() => {
     async function fetchMovie() {
       const response = await api.get(`/notes/${params.id}`)
-      setData(response.data)      
+      setData(response.data)
     }
 
     fetchMovie()
@@ -43,7 +49,7 @@ export function Details() {
       <Header>
         <Input
           placeholder="Pesquisar pelo título"
-          onClick={handleSearch}
+          onClick={handleBack}
         />
       </Header>
 
@@ -60,16 +66,16 @@ export function Details() {
             <h1>
               {data.title}
             </h1>
-            <Rating rating={data.rating}/>           
+            <Rating rating={data.rating} />
           </Title>
 
           <Author>
-            <img 
-              src={data.avatar ? `${api.defaults.baseURL}/files/${data.avatar}` : avatarPlaceholder} 
-              alt={data.name} 
+            <img
+              src={data.avatar ? `${api.defaults.baseURL}/files/${data.avatar}` : avatarPlaceholder}
+              alt={data.name}
             />
             <p>{data.name}</p>
-            <LuClock3 />            
+            <LuClock3 />
             <p>{formatDateTime(data.created_at)}</p>
           </Author>
 
@@ -90,6 +96,12 @@ export function Details() {
           <p>
             {data.description}
           </p>
+
+          <Button
+            id="remove"
+            title="Excluir filme"
+            onClick={handleRemove}
+          />
         </Content>
       }
 

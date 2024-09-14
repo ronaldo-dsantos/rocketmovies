@@ -33,6 +33,11 @@ export const Content = styled.div`
   > p {
     text-align: justify;
   }
+
+  > button#remove {
+    margin: 40px 0 40px;
+    width: 30%;
+  }  
 `
 
 export const Title = styled.div`

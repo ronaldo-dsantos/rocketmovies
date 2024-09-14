@@ -23,12 +23,8 @@ export function New() {
 
   const navigate = useNavigate()
 
-  function handleSearch() {
-    navigate("/")
-  }
-
   function handleBack() {
-    navigate("/")
+    navigate(-1)
   }
 
   function handleAddTag() {
@@ -71,7 +67,7 @@ export function New() {
     })
 
     alert("Filme cadastrado com sucesso!")
-    navigate("/")
+    navigate(-1)
   }
 
   return (
@@ -79,7 +75,7 @@ export function New() {
       <Header>
         <Input
           placeholder="Pesquisar pelo título"
-          onClick={handleSearch}
+          onClick={handleBack}
         />
       </Header>
 
