@@ -63,10 +63,19 @@ export function Details() {
           />
 
           <Title>
-            <h1>
-              {data.title}
-            </h1>
-            <Rating rating={data.rating} />
+            <div>
+              <h1>
+                {data.title}
+              </h1>
+            
+              <Rating rating={data.rating} />
+            </div>
+
+            <Button
+              id="remove"
+              title="Excluir filme"
+              onClick={handleRemove}
+            />
           </Title>
 
           <Author>
@@ -96,12 +105,6 @@ export function Details() {
           <p>
             {data.description}
           </p>
-
-          <Button
-            id="remove"
-            title="Excluir filme"
-            onClick={handleRemove}
-          />
         </Content>
       }
 

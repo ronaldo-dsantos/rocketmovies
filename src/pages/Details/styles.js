@@ -32,6 +32,23 @@ export const Content = styled.div`
 
   > p {
     text-align: justify;
+    white-space: pre-wrap; // Esta propriedade preserva as quebras de linha
+    max-height: 320px;
+
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 8px;      
+      }
+
+    &::-webkit-scrollbar-track {
+      background: none;      
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.COLORS.PINK}; 
+      border-radius: 8px;      
+    }
   }
 
   > button#remove {
@@ -41,24 +58,35 @@ export const Content = styled.div`
 `
 
 export const Title = styled.div`
-  margin: 24px 0;
-
   display: flex;
   align-items: center;
-  gap: 10px;  
+  justify-content: space-between;
+  
+  div {
+    margin: 24px 0;
 
-  > h1 {
-    font-size: 36px;
-    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;  
 
-    margin-right: 10px;
+    h1 {
+      font-size: 36px;
+      font-weight: 500;
+
+      margin-right: 10px;
+    }
+
+    > div {
+      svg {
+        width: 20px;
+        height: 20px;
+      }  
+    }
   }
 
-  > div {
-    svg {
-      width: 20px;
-      height: 20px;
-    }  
+  button {
+    width: 208px;
+    margin: 0;
   }
 `
 
