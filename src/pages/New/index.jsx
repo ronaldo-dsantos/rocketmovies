@@ -60,7 +60,7 @@ export function New() {
     }
 
     if (tags.length == 0) {
-      return alert("Informe um ou mais marcadores para o seu filme.")
+      return alert("Adicione um ou mais marcadores para o seu filme.")
     }
 
     await api.post("/movies", {
