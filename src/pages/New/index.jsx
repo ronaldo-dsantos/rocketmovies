@@ -45,11 +45,11 @@ export function New() {
   }
 
   async function handleNewMovie() {
-    if (!title || !rating || !description) {
-      return alert("Para cadastrar um novo filme, preencha todos os campos.")
-    }
-
     const ratingIsNumber = Math.round(rating)
+
+    if (!title || !rating || !description) {
+      return alert("Para cadastrar um novo filme, preencha todos os campos.")      
+    }    
 
     if (ratingIsNumber < 1 || ratingIsNumber > 5 || isNaN(ratingIsNumber)) {
       return alert("Informe uma nota de 1 a 5.")
@@ -57,6 +57,10 @@ export function New() {
 
     if (newTag) {
       return alert("Você inseriu um marcador mas não adicionou, clique em adicionar ou deixe o campo vazio.")
+    }
+
+    if (tags.length == 0) {
+      return alert("Informe um ou mais marcadores para o seu filme.")
     }
 
     await api.post("/movies", {

@@ -67,9 +67,6 @@ export function Home() {
             ))
           }
         </div>
-
-
-
       </Content>
     </Container>
   )
