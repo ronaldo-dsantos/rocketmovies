@@ -33,7 +33,7 @@ export const Content = styled.div`
   > p {
     text-align: justify;
     white-space: pre-wrap; // Esta propriedade preserva as quebras de linha
-    max-height: 320px;
+    max-height: 340px;
 
     overflow-y: auto;
 

@@ -59,7 +59,7 @@ export function New() {
       return alert("Você inseriu um marcador mas não adicionou, clique em adicionar ou deixe o campo vazio.")
     }
 
-    await api.post("/notes", {
+    await api.post("/movies", {
       title,
       description,
       rating,

@@ -27,17 +27,17 @@ export function Details() {
   }
 
   async function handleRemove() {
-    const confirm = window.confirm("Deseja realmente remover a nota?")
+    const confirm = window.confirm("Deseja realmente excluir o filme?")
 
     if (confirm) {
-      await api.delete(`/notes/${params.id}`)
+      await api.delete(`/movies/${params.id}`)
       handleBack()
     }
   }
 
   useEffect(() => {
     async function fetchMovie() {
-      const response = await api.get(`/notes/${params.id}`)
+      const response = await api.get(`/movies/${params.id}`)
       setData(response.data)
     }
 
